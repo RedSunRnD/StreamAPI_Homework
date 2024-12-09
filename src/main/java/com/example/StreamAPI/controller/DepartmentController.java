@@ -1,11 +1,11 @@
-package controller;
+package com.example.StreamAPI.controller;
 
-import domain.Employee;
+import com.example.StreamAPI.domain.Employee;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import service.DepartmentService;
+import com.example.StreamAPI.service.DepartmentService;
 
 import java.util.List;
 import java.util.Map;

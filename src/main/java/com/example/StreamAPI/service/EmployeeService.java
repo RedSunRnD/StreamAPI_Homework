@@ -1,6 +1,6 @@
-package service;
+package com.example.StreamAPI.service;
 
-import domain.Employee;
+import com.example.StreamAPI.domain.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.*;

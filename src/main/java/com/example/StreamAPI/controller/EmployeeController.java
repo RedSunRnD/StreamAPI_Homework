@@ -1,10 +1,10 @@
-package controller;
-import domain.Employee;
+package com.example.StreamAPI.controller;
+import com.example.StreamAPI.domain.Employee;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import service.EmployeeService;
+import com.example.StreamAPI.service.EmployeeService;
 
 @RestController
 @RequestMapping("/employee")
@@ -18,9 +18,17 @@ public class EmployeeController {
     @GetMapping(path = "/add")
     public Employee addEmployee(@RequestParam String firstName,
                                 @RequestParam String lastName,
-                                @RequestParam(required = false) int salary,
+                                @RequestParam(required = false) Integer salary,
                                 @RequestParam(required = false) String department) {
-        Employee employee = new Employee(firstName, lastName, 0, "");
+        if (salary == null) {
+            salary = 0;
+        }
+
+        if (department == null) {
+            department = "0";
+        }
+
+        Employee employee = new Employee(firstName, lastName, salary, department );
         employeeService.addEmployee(employee);
         return employee;
     }

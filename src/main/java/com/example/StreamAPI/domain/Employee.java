@@ -1,4 +1,4 @@
-package domain;
+package com.example.StreamAPI.domain;
 import java.util.Objects;
 
 public class Employee {
